@@ -10,7 +10,15 @@ export default function(props) {
       stylesButton.push(styles.operationButton)
 
    return( 
-    <TouchableHighlight>
+    <TouchableHighlight
+      onPress={() => {
+         if(props.propriedade != 'Clear') {
+            props.display(props.propriedade)
+         }else{
+            props.display()
+         }
+      }}
+      >
        <Text style={stylesButton}>{props.propriedade}</Text>
     </TouchableHighlight>
    )
@@ -42,4 +50,13 @@ const styles = StyleSheet.create({
       color: '#FFF',
    },
 })
+
+/**
+ * Passo a Passo:
+ * 
+ * 1- Mostrar o numero na tela de acordo com o botão que foi clicado na tela de acordo com o botão que foi clicado (OK)
+ * 2- Implementar função de limpar tela (OK)
+ * 3- Implementar operações (Falta)
+ * 4- Validação (Falta)
+ */
 
