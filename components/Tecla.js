@@ -58,5 +58,7 @@ const styles = StyleSheet.create({
  * 2- Implementar função de limpar tela (OK)
  * 3- Implementar operações (Falta)
  * 4- Validação (Falta)
+ * 
+ * >> Resolver lógica do display
  */
 

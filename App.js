@@ -5,10 +5,13 @@ import Tecla from './components/Tecla'
 
 export default function App() {
   const [display, setDisplay] = useState('');
-  const [operation, setOperetion] = useState([]);
+  const [index0, setIndex0] = useState(0);
+  const [index1, setIndex1] = useState(0);
+  const [result, setResult] = useState(0);
 
   function functionDisplay(concatenar) {
     setDisplay(display + concatenar)
+    console.warn(`${display}`)
   }
 
   function functionClear() {
@@ -16,19 +19,36 @@ export default function App() {
   }
 
   function functionOperetion(operador) {
-    if(operation == 0) {
-      setOperetion([display])
+    if(index0 == 0 && index1 == 0) {
+      setIndex0(parseFloat(display))
       functionClear()
     }else{
-      setOperetion([,display])
-      functionClear()
-      // setDisplay(`${operation[0]} ${operation[1]}`)
-      // try{
-      //   setDiplay(`${eval(`${operation[0]} ${operador} ${operation[1]}`)}`)
-      // }catch{
-      //   console.warn('0')
-      // }
-      // setOperetion(operation.shift())
+      setIndex1(parseFloat(display))
+      
+      switch (operador) {
+        case '+':
+          setResult(parseFloat(index0) + parseFloat(index1))
+          setDisplay(`${result}`)
+          console.warn(`${parseFloat(index0)}`)
+          break;
+        case '-':
+          setResult(parseFloat(index0) - parseFloat(index1))
+          setDisplay(`${result}`)
+          break;
+        case '*':
+          setResult(parseFloat(index0) * parseFloat(index1))
+          setDisplay(`${result}`)
+          break;
+        case '/':
+          setResult(parseFloat(index0) / parseFloat(index1))
+          setDisplay(`${result}`)
+          break;
+        default:
+          console.warn('error')
+      }
+      
+      //setIndex0(0)
+      //setIndex1(0)
     }
 
   }
