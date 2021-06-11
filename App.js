@@ -10,13 +10,17 @@ export default function App() {
     setDisplay(display + concatenar)
   }
 
-  function functionClear() {
-    setDisplay('')
+  function functionClear(propriedade) {
+    if(propriedade == 'Clear'){
+      setDisplay('')
+    }else{
+      setDisplay(display.slice(0,-1))
+    }
   }
 
   function functionOperetion() {
     try{
-      setDisplay(eval(display))
+      setDisplay(`${eval(display)}`)
     }catch{
       setDisplay('sintax error')
     }
@@ -46,6 +50,7 @@ export default function App() {
         <Tecla propriedade="=" display={functionOperetion} />
         <Tecla propriedade="-" operation={true} display={functionDisplay} />
         <Tecla propriedade="Clear" operation={true} multi={true} display={functionClear} />
+        <Tecla propriedade="Delete" operation={true} multi={true} display={functionClear} />
       </View>
     </SafeAreaView>
   );

@@ -15,7 +15,7 @@ export default function(props) {
          if(props.propriedade != 'Clear') {
             props.display(props.propriedade)
          }else{
-            props.display()
+            props.display(props.propriedade)
          }
       }}
       >
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
    },
 
    buttonMulti: {
-      width: Dimensions.get('window').width,
+      width: Dimensions.get('window').width / 2,
       height: Dimensions.get('window').width / 5,
       fontSize: 28,
    },
