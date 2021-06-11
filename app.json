@@ -5,6 +5,7 @@
     "name": "calculadora",
     "slug": "calculadora",
     "version": "1.0.0",
+    "orientation": "portrait",
     "assetBundlePatterns": [
       "**/*"
     ]

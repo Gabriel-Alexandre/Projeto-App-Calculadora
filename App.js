@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, SafeAreaView } from 'react-native'
+import { StyleSheet, View, SafeAreaView, StatusBar } from 'react-native'
 import Display from './components/Display'
 import Tecla from './components/Tecla'
 
@@ -28,6 +28,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="black" barStyle="light-content"/>
       <View style={styles.display}>
         <Display value={display} />
       </View>
@@ -73,15 +74,17 @@ const styles = StyleSheet.create({
 });
 
 /**
- * Próximos passos:
+ * Implementações futuras:
  * 
- * 1- Limpar código
- * 2- Botão de remover
- * 3- Otimizar display
- * 4- Otimizar laytout
+ * 1- Validar melhor o 'sintax error'
+ * 2- Display de resultado (Modelo calculadora moderna)
+ * 3- Otimizar visualização dos resultados
+ * 4- Implementar mais funcionalidades
  * 
  * O que eu aprendi:
  * 
- * >> Otimizar o uso de estados
- * >> É melhor utilizar funções que executam melhor meu objetivo. (Além de facilitar minha vida, são melhor testadas)
+ * >> Otimizar o uso de useStates
+ * >> É melhor utilizar funções que executam melhor meu objetivo. (Além de facilitar minha vida, são melhor testadas) -> Isso é algo bem importante, que quando for fazer um projeto é importante pensar muito bem em que ferramentas eu vou usar, pois isso poder tanto ajudar como dificultar minha vida.
+ * 
+ * >> Anotações: versão 1.0
  */
