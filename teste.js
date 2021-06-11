@@ -1,9 +1,3 @@
-const operation = '+'
-let soma = 0
-const numero = 10
-const numero2 = 20
+const operation = eval(`10+10*10/10`)
 
-if (operation == '+')
-    soma = numero + numero2
-
-console.log(soma)
+console.log(operation)
